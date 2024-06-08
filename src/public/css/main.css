@@ -1,0 +1,430 @@
+body {
+    background: #0c0c14;  /* fallback for old browsers */
+}
+
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #fff;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #fff;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #fff;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #fff;
+    vertical-align: top;
+    border-color: #444;
+  }
+  
+  .table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+  }
+  
+  .table > tbody {
+    vertical-align: inherit;
+  }
+  
+  .table > thead {
+    vertical-align: bottom;
+  }
+  
+  .table > :not(:last-child) > :last-child > * {
+    border-bottom-color: currentColor;
+  }
+  
+  .caption-top {
+    caption-side: top;
+  }
+  
+  .table-sm > :not(caption) > * > * {
+    padding: 0.25rem 0.25rem;
+  }
+  
+  .table-bordered > :not(caption) > * {
+    border-width: 1px 0;
+  }
+  
+  .table-bordered > :not(caption) > * > * {
+    border-width: 0 1px;
+  }
+  
+  .table-borderless > :not(caption) > * > * {
+    border-bottom-width: 0;
+  }
+  
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    --bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: var(--bs-table-striped-color);
+  }
+  
+  .table-active {
+    --bs-table-accent-bg: var(--bs-table-active-bg);
+    color: var(--bs-table-active-color);
+  }
+  
+  .table-hover > tbody > tr:hover {
+    --bs-table-accent-bg: var(--bs-table-hover-bg);
+    color: var(--bs-table-hover-color);
+  }
+  
+  .table-primary {
+    --bs-table-bg: #375a7f;
+    --bs-table-striped-bg: #416285;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #4b6b8c;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #466689;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #4b6b8c;
+  }
+  
+  .table-secondary {
+    --bs-table-bg: #444444;
+    --bs-table-striped-bg: #4d4d4d;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #575757;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #525252;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #575757;
+  }
+  
+  .table-success {
+    --bs-table-bg: #00bc8c;
+    --bs-table-striped-bg: #0dbf92;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #1ac398;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #13c195;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #1ac398;
+  }
+  
+  .table-info {
+    --bs-table-bg: #3498db;
+    --bs-table-striped-bg: #3e9ddd;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #48a2df;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #43a0de;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #48a2df;
+  }
+  
+  .table-warning {
+    --bs-table-bg: #f39c12;
+    --bs-table-striped-bg: #f4a11e;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #f4a62a;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #f4a324;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #f4a62a;
+  }
+  
+  .table-danger {
+    --bs-table-bg: #e74c3c;
+    --bs-table-striped-bg: #e85546;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #e95e50;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #e9594b;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #e95e50;
+  }
+  
+  .table-light {
+    --bs-table-bg: #adb5bd;
+    --bs-table-striped-bg: #b1b9c0;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #b5bcc4;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #b3bbc2;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #b5bcc4;
+  }
+  
+  .table-dark {
+    --bs-table-bg: #303030;
+    --bs-table-striped-bg: #3a3a3a;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #454545;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #404040;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #454545;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 575.98px) {
+    .table-responsive-sm {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  @media (max-width: 767.98px) {
+    .table-responsive-md {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  @media (max-width: 991.98px) {
+    .table-responsive-lg {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  @media (max-width: 1199.98px) {
+    .table-responsive-xl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  @media (max-width: 1399.98px) {
+    .table-responsive-xxl {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+
+  .m-0 {
+    margin: 0 !important;
+  }
+  
+  .m-1 {
+    margin: 0.25rem !important;
+  }
+  
+  .m-2 {
+    margin: 0.5rem !important;
+  }
+  
+  .m-3 {
+    margin: 1rem !important;
+  }
+  
+  .m-4 {
+    margin: 1.5rem !important;
+  }
+  
+  .m-5 {
+    margin: 3rem !important;
+  }
+  
+  .m-auto {
+    margin: auto !important;
+  }
+  
+  .mx-0 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  
+  .mx-1 {
+    margin-right: 0.25rem !important;
+    margin-left: 0.25rem !important;
+  }
+  
+  .mx-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+  }
+  
+  .mx-3 {
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+  }
+  
+  .mx-4 {
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
+  }
+  
+  .mx-5 {
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
+  }
+  
+  .mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  
+  .my-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .my-1 {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .my-2 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .my-3 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .my-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+  }
+  
+  .my-auto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+  
+  .mt-0 {
+    margin-top: 0 !important;
+  }
+  
+  .mt-1 {
+    margin-top: 0.25rem !important;
+  }
+  
+  .mt-2 {
+    margin-top: 0.5rem !important;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem !important;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem !important;
+  }
+  
+  .mt-5 {
+    margin-top: 3rem !important;
+  }
+  
+  .mt-auto {
+    margin-top: auto !important;
+  }
+  
+  .me-0 {
+    margin-right: 0 !important;
+  }
+  
+  .me-1 {
+    margin-right: 0.25rem !important;
+  }
+  
+  .me-2 {
+    margin-right: 0.5rem !important;
+  }
+  
+  .me-3 {
+    margin-right: 1rem !important;
+  }
+  
+  .me-4 {
+    margin-right: 1.5rem !important;
+  }
+  
+  .me-5 {
+    margin-right: 3rem !important;
+  }
+  
+  .me-auto {
+    margin-right: auto !important;
+  }
+  
+  .mb-0 {
+    margin-bottom: 0 !important;
+  }
+  
+  .mb-1 {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .mb-3 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mb-5 {
+    margin-bottom: 3rem !important;
+  }
+  
+  .mb-auto {
+    margin-bottom: auto !important;
+  }
+  
+  .ms-0 {
+    margin-left: 0 !important;
+  }
+  
+  .ms-1 {
+    margin-left: 0.25rem !important;
+  }
+  
+  .ms-2 {
+    margin-left: 0.5rem !important;
+  }
+  
+  .ms-3 {
+    margin-left: 1rem !important;
+  }
+  
+  .ms-4 {
+    margin-left: 1.5rem !important;
+  }
+  
+  .ms-5 {
+    margin-left: 3rem !important;
+  }
+  
+  .ms-auto {
+    margin-left: auto !important;
+  }
+
+  .fw-bold {
+    font-weight: 700 !important;
+  }
+  
+  .fw-bolder {
+    font-weight: bolder !important;
+  }
+  
