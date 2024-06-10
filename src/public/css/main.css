@@ -428,3 +428,7 @@ body {
     font-weight: bolder !important;
   }
   
+  .hidden{
+    visibility:hidden;
+ }
+

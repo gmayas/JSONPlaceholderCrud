@@ -17,7 +17,6 @@ const getUsers = async () => {
 let getUsersToStorage = async () => {
   try {
       let dataRes = await getUsers();
-      console.log("getUsersToStorage: ",dataRes)
       localStorage.setItem("users", JSON.stringify(dataRes))
   }
   catch (e) {

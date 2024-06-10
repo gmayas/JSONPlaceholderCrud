@@ -9,7 +9,6 @@
     <title>Usuarios</title>
     <%- include("tools/toolshead") %>
         <link rel="stylesheet" href="css/main.css">
-
 </head>
 
 <body>
@@ -20,17 +19,281 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-sm-3 mt-2">
-                            <a class="btn btn-primary nav-link mt-1 me-1" type="button" href="/newUser">Add new</a>
+                            <button id="btnNewUser" class="btn btn-primary mt-1 me-1" type="button" data-bs-toggle="modal" data-bs-target="#modalNewUser">Add new</a>
                         </div>
                         <div class="col-sm-9 mt-2">
                             <h3 class="text-center mt-1">Usuarios</h3>
                         </div>
                     </div>
-                    <table id = userList class="table table-striped table-hover"></table>
+
+                    <table id=userList class="table table-striped table-hover"></table>
                 </div>
             </div>
         </div>
         <%- include("tools/footer") %>
-        <script type="module" src="js/storageToTable.js" async></script>   
-        
+            <script type="module" src="js/storageToTable.js"></script>
+            <!-- Modal modalSeeMore -->
+            <div class="modal fade" id="modalSeeMore" tabindex="-1" aria-labelledby="modalSeeMore" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalSeeMore">User information.</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card border-light">
+                                <div class="card-body">
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">ID:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" readonly class="form-control-plaintext" id="idUser"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Name:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="userName"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">User name:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="nameUser"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Email:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="userEmail"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Phone:</label>
+                                        <div class="col-sm-9">
+                                            <input type="phone" disabled readonly class="form-control" id="userPhone"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Company:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="userCompany"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Adress:</label>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Street:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="userStreet"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Suite:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="userSuite"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">City:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="userCity"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Zipcode:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" id="userZipCode"
+                                                value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal modalDelete -->
+            <div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="modalDelete" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-exclamation-triangle-fill mt-2 mr-2" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg>
+                            <h1 class="modal-title fs-5" id="modalDelete">Warning!!!.</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card border-light bg-danger text-white">
+                                <div class="card-body">
+                                    <h4 class="card-title">Do you want to delete this user?</h4>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">ID:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" readonly class="form-control-plaintext" id="idUserDelete"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Name:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control"
+                                                id="userNameDelete" value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">User name:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control" 
+                                                id="nameUserDelete" value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Email:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" disabled readonly class="form-control"
+                                                id="userEmailDelete" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnOkDelete" type="button" class="btn btn-outline-danger"
+                                data-bs-dismiss="modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-exclamation-triangle-fill mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2">
+                                    </path>
+                                </svg>
+                                Ok
+                            </button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal modalNewUser -->
+            <div class="modal fade" id="modalNewUser" tabindex="-1" aria-labelledby="modalNewUser" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalNewUser">Add new user.</h1>
+                            <button id="btnCloseNewUser"  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card border-light">
+                                <div class="card-body">
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">ID:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" readonly class="form-control-plaintext" id="idNewUser"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Name:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="newUserName"
+                                                value="">
+                                            <label id = "nameReq" class="text-danger" style="display: none;">Name is required</label> 
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">User name:</label>
+                                        <div class="col-sm-9">
+                                            <input type="" class="form-control" id="newNameUSer"
+                                                value="">
+                                            <label id = "userNameReq" class="text-danger" style="display: none;">User name is required</label> 
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Email:</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="newUserEmail"
+                                                value="">
+                                                <label id = "emailReq" class="text-danger" style="display: none;">Email is required</label>    
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Phone:</label>
+                                        <div class="col-sm-9">
+                                            <input type="phone" class="form-control" id="newUserPhone"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Company:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="newUserCompany"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Adress:</label>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Street:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="newUserStreet"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Suite:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="newUserSuite"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">City:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="newUserCity"
+                                                value="">
+                                        </div>
+                                    </div>
+                                    <div class="mb-1 row">
+                                        <label class="col-sm-3 col-form-label">Zipcode:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="newUserZipCode"
+                                                value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnValReq" type="button" class="btn btn-primary">Validar</button>
+                            <button id="btnOkNewUser" disabled=true type="button" class="btn btn-success" data-bs-dismiss="modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-plus-square" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                                </svg>
+                                Ok
+                            </button>
+                            <button id="btnCloseNewUserPrimary" type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </body>
