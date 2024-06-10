@@ -34,7 +34,7 @@ Para ejecutar “see more”, solo de click en el botón azul de la línea del u
 
 ![](/images/03.png)
 
-se sesplegará el siguiente cuadro de dialogo.
+Se sesplegará el siguiente cuadro de dialogo.
 
 ![](/images/04.png)
 
@@ -70,7 +70,6 @@ Escriba en los campos y de click en el botón validar, escriba en los campos req
 Y asi vera que el usuario fue agregado a la lista.
 
 ![](/images/11.png)
-
 
 `© 2024 Copyright: GMayaS C:\>Desarrollo en Sistemas.`
 
