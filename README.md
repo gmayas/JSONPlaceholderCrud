@@ -1,87 +1,77 @@
-# api3hunters
+# JSONPlaceholderCrud
 
-Este proyecto fue creado con Node versión 14.16.1.
+Este proyecto fue creado con Node versión 20.12.2.
 Al momento de descargar este proyecto, instale las dependencias con npm install, para ejecutar npm run dev, la aplicación corre en: http://localhost:3000/
-## 3Hunters FrontEnd
+## FrontEnd Web API
 
-3Hunters FrontEnd es una aplicación web que fue creada como resultado a la prueba técnica que 3Hunters solicita a un postulante para una vacante de desarrollo de software.
+FrontEnd Web API es una aplicación web que fue creada como resultado a la prueba técnica que Grupo Salinas solicita a un postulante para una vacante de desarrollo de software.
 
-3Hunters FrontEnd esta creado en Node con Bootstrap y Bootswatch como framewoks de controles y estilos, EJS como generador de vistas y Axios para conectarse via URL al BackEnd.
+FrontEnd Web API esta creado en Node con Bootstrap y Bootswatch como framewoks de controles y estilos, EJS como generador de vistas y fetch para conectarse via URL https://jsonplaceholder.typicode.com/users
 
-Para tener acceso al sistema en línea, de clic en el siguiente link:
-
-https://api3hunters.herokuapp.com/
-
-![](/images/img01.png)
+![](/images/01.png)
 
 En base a la prueba asignada, decidí crear un solo FrontEnd para mostrar todos los puntos que requerian programación.
 
-## Ejercicios.
-### Ejercicio 01.
+## Evaluación practica
 
-Desarrollar el código para consumir la siguiente api.
+Si desea ver el contenido de la evaluación practica requerida, lo puede ver dando click en el siguiente link:
 
-Path Authorization: https://atlantia-dev-test.herokuapp.com/api/auth
+https://docs.google.com/document/d/1DC9QvW1knUgAafS7RenTvutoJG0yQYmK/edit?usp=sharing&ouid=107360318909706824581&rtpof=true&sd=true
 
-"authuser": "Pm7EMK6Cfp9gn568"
+## Detalles técnicos
 
-Path: https://atlantia-dev-test.herokuapp.com/api/profile
+En base a la url que indica la prueba técnica, https://jsonplaceholder.typicode.com/users, revisando la API de jsonplaceholder para la ruta /users, solo maneja el método Get, por consiguiente para hacer nuestro get a la url, utilizo el método fetch para extraer el listado de los usuarios que maneja la url, que en este caso solo envía un listado de 10 elementos y dicha informacion se guarda en el localstorage del navegador para el manejo del despliegue en la tabla de la vista Usuarios, como asi para realizar lo solicitado como “see more”, eliminar y agregar usuario.
 
-Authorization: Bearer Token 
+## Vista de usuarios:
 
-Tecnologías a usar:
+Para tener acceso a la vista de usuario solo de click en la opción de “Usuarios” en la NavBar.
 
-NodeJS, Axios o Fetch
+![](/images/02.png)
 
-Solo debe de dar click en la opción del NavBar Ejercicio 01, espere y vera el resultado.
+## See more.
 
-![](/images/img02.png)
+Para ejecutar “see more”, solo de click en el botón azul de la línea del usuario que desea ver.
 
-### Ejercicio 02.
+![](/images/03.png)
 
-De la siguiente base de datos MongoBD, realizar un API (REST) para exponer los siguiente endpoints:
+se sesplegará el siguiente cuadro de dialogo.
 
-Conexión db: "mongodb+srv://admin:pQo82ujIYNptFBxG@cluster0.dzxo9.mongodb.net/atlantiaDev?retryWrites=true&w=majority"
+![](/images/04.png)
 
-Entidad: User.
+## Eliminar usuario:
 
-Propiedades: name, age, city.
+Para eliminar un usuario, solo de click en el botón rojo de la línea del usuario que desea eliminar.
 
-GET USER (Obtener todos los usuarios).
-POST USER (Agregar usuario y regresar su información).
+![](/images/05.png)
 
-Tecnologías a usar:
+Se desplegará el siguiente cuadro de dialogo.
 
-NodeJS, Express o NestJS, Mongoose.
+![](/images/06.png)
 
-En este ejercicio se tomó la decisión de mostrar el resultado de los procesos en este mismo FrontEnd, de click en la opción del NavBar Ejercicio 02, vera la siguiente vista: 
+Si da click en Ok, vera como el usuario seleccionado desaparece de la lista.
 
-GET USER (Obtener todos los usuarios).
+![](/images/07.png)
 
-![](/images/img03.png)
+## Agregar un usuario:
 
-POST USER (Agregar usuario y regresar su información).
+Para agregar un usuario, solo de click en el botón azul Add new.
 
-Para realizar el POST USER (Agregar usuario y regresar su información), de click al botón Add new y vera la siguiente vista:
+![](/images/08.png)
 
-![](/images/img04.png)
+Se desplegará el siguiente cuadro de dialogo.
 
-En esta vista podra capturar name, age and city, solo de click en el botón Save, espere el proceso y lo regresa a la vista anterior donde le muestra el registro adicionado.
+![](/images/09.png)
 
-![](/images/img05.png)
+Escriba en los campos y de click en el botón validar, escriba en los campos requeridos para que se pueda habilitar el botón Ok.
 
-Para ver la segunda parte de este ejercicio, debe entrar al proyecto 3Hunters BackEnd, solo de click el siguiente link:
+![](/images/10.png)
 
-https://github.com/gmayas/apirest3hunters.git
 
-En la sección README encontrara su descripción.  
+Y asi vera que el usuario fue agregado a la lista.
 
-Para ver en producción 3Hunters BackEnd, solo de click el siguiente link:
+![](/images/11.png)
 
-https://apirest3hunters.herokuapp.com/
 
-![](/images/img06.png)
-
-`© 2021 Copyright: GMayaS C:\>Desarrollo en Sistemas.`
+`© 2024 Copyright: GMayaS C:\>Desarrollo en Sistemas.`
 
 
