@@ -1,6 +1,7 @@
 {
   "name": "jsonplaceholdercrud",
   "version": "1.0.0",
+  "homepage": "https://gmayas.github.io/JSONPlaceholderCrud/",
   "description": "",
   "main": "src/index.js",
   "scripts": {
